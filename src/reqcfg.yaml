@@ -1,0 +1,11 @@
+ConfigSettings:
+  ValuationCodeList:
+    - 3018   Flanges 70 HPS
+    - 3019   Detail Plate Mtl 70 HPS
+    - 3023   Webs 50/50W
+    - 3024   Flanges 50/50W
+    - 3025   Detail Plate Mtl 50/50W
+    - 3026   Webs 50 HPS
+    - 3027   Flanges 50 HPS
+    - 3028   Detail Plate Mtl 50 HPS
+    - 3029   Webs 70 HPS
