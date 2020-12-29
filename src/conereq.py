@@ -10,6 +10,8 @@ from collections import namedtuple
 from fractions import Fraction
 
 
+DESC_TEMPLATE = "PL {} x {} x {}{}({})"
+
 def main():
     csv_file = get_file()
     data = parse_csv(csv_file)
@@ -178,8 +180,6 @@ def calc_valuation_group(group, grade, yaml_cfg):
 
 
 def calc_description(grade, thk, wid, length):
-    desc = "PL "
-
     def numstr(num, show_zero=False):
         if num % 1 == 0:
             return "{:n}".format(num)
@@ -193,7 +193,16 @@ def calc_description(grade, thk, wid, length):
     _wid = numstr(wid)
     _len = "{:n}'-{}".format(length // 12, numstr(length % 12, show_zero=True))
 
-    return "PL {} x {} x {}    ({})".format(_thk, _wid, _len, grade)
+    desc = DESC_TEMPLATE.format(_thk, _wid, _len, "{}", grade)
+    
+    # SAP limit is 40 chars
+    spaces = 40 - len(desc) - 2
+
+    # make sure at least 1 space
+    # will truncate grade if over 40, but that is Ok
+    spaces = max(spaces, 1)
+
+    return desc.format(spaces)
 
 
 if __name__ == "__main__":
