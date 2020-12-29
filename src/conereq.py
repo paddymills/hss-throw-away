@@ -202,7 +202,7 @@ def calc_description(grade, thk, wid, length):
     # will truncate grade if over 40, but that is Ok
     spaces = max(spaces, 1)
 
-    return desc.format(spaces)
+    return desc.format(" " * spaces)
 
 
 if __name__ == "__main__":
