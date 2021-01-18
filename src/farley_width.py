@@ -9,7 +9,8 @@ END_MASK_LENGTH = 6     # will not compare points within this many inches from t
 
 def main():
     prog = 6
-    nc_file = r"\\hssieng\SNDataDev\NC\PlateProcessors\Post\{}.n".format(prog)
+    # nc_file = r"\\hssieng\SNDataDev\NC\PlateProcessors\Post\{}.n".format(prog)
+    nc_file = r"C:\Users\PMiller1\Downloads\46011.n"
 
     plasma_selected = False
     plasma_on = False   # M77/M79
