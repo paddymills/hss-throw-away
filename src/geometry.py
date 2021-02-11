@@ -9,12 +9,12 @@ import os
 import math
 import threading
 
-XML_IMPORT_EXEC = r"\\HSSIENG\SNDataDev\__oys\bin\SNImportXML\SNImportXML.exe"
+XML_IMPORT_EXEC = r"\\hssieng\SNDataPrd\__oys\bin\SNImportXML\SNImportXML.exe"
 
-_dir = r'\\HSSIENG\SNDataDev\__oys\SNImportXML'
+_dir = r'\\hssieng\SNDataPrd\__xml'
 _input_dir = os.path.join(_dir, "Input")
 _error_dir = os.path.join(_dir, "Error")
-_prenest = r"\\hssieng\SNDataDev\PARTS\Prenesting"
+_prenest = r"\\hssieng\SNDataPrd\PARTS\Prenesting"
 templates = 'xml'
 
 settings.configure()
@@ -58,7 +58,7 @@ def run_xml_import():
                 break
         print("\n")
 
-    # create thraeds
+    # create threads
     main = threading.Thread(target=main_thread)
     progress = threading.Thread(target=progress_thread)
 
